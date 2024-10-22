@@ -1,0 +1,14 @@
+# FedPylot by Cyprien Quéméneur, GPL-3.0 license
+# KITTI Vision Benchmark Suite - 2D Object Detection
+# https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d
+
+# base path to subsets
+train: ./datasets/pcb
+# val:  ./datasets/pcb
+val:  /root/zwh/fedpylot/datasets/pcb/
+
+# number of classes
+nc: 6
+
+# class names
+names: ['missing_hole', 'mouse_bite', 'open_circuit', 'short', 'spur', 'spurious_copper']

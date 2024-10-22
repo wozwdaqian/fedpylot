@@ -1,0 +1,34 @@
+# FedPylot by Cyprien Quéméneur, GPL-3.0 license
+# YOLOv7 在 PCB 数据集上使用 FedOpt 训练的超参数（默认微调设置，带有扩展的 warmup）
+
+lr0: 0.01             # 初始学习率（SGD 为 1E-2，Adam 为 1E-3）
+lrf: 0.1              # 最终 OneCycleLR 学习率（lr0 * lrf）
+momentum: 0.937       # SGD 动量系数 / Adam 的 beta1
+weight_decay: 0.0005  # 优化器权重衰减系数 5e-4
+warmup_epochs: 30.0   # 热身（warmup）训练轮数（可以是小数）
+warmup_momentum: 0.8  # 热身阶段的初始动量
+warmup_bias_lr: 0.1   # 热身阶段的初始偏置学习率
+box: 0.05             # 边界框（box）损失权重
+cls: 0.3              # 分类（class）损失权重
+cls_pw: 1.0           # 分类损失的正权重
+obj: 0.7              # 目标（object）损失权重（随像素比例缩放）
+obj_pw: 1.0           # 目标损失的正权重
+iou_t: 0.20           # IoU（交并比）训练阈值
+anchor_t: 4.0         # 锚框的多重阈值
+# anchors: 3         # 每个输出层的锚框数（0 表示忽略）
+fl_gamma: 0.0         # focal loss 的 gamma 值（efficientDet 默认 gamma 为 1.5）
+hsv_h: 0.015          # 图像 HSV 色调增强幅度（比例）
+hsv_s: 0.7            # 图像 HSV 饱和度增强幅度（比例）
+hsv_v: 0.4            # 图像 HSV 明度增强幅度（比例）
+degrees: 0.0          # 图像旋转角度（正负范围）
+translate: 0.2        # 图像平移幅度（正负比例）
+scale: 0.5            # 图像缩放幅度（正负增益）
+shear: 0.0            # 图像错切幅度（正负角度）
+perspective: 0.0      # 图像透视变换（正负比例），范围 0-0.001
+flipud: 0.0           # 图像上下翻转的概率
+fliplr: 0.5           # 图像左右翻转的概率
+mosaic: 1.0           # 图像马赛克增强的概率
+mixup: 0.0            # 图像混合增强的概率
+copy_paste: 0.0       # 图像复制粘贴增强的概率
+paste_in: 0.0         # 图像复制粘贴增强的概率，设置为 0 以加快训练
+loss_ota: 1           # 使用 ComputeLossOTA，若设置为 0 可加快训练
